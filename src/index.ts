@@ -41,7 +41,9 @@ export {
 } from './hooks/load.js';
 
 export {
-  useCreation
+  useCreation,
+  useMemoOne,
+  useCallbackOne
 } from './hooks/memo.js';
 
 export {

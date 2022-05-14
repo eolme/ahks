@@ -12,6 +12,7 @@ All-in-one high-quality and reliable React Hooks:
 - [use-isomorphic-layout-effect](https://npm.im/use-isomorphic-layout-effect)
 - [use-latest](https://npm.im/use-latest)
 - [use-sync-external-store](https://npm.im/use-sync-external-store)
+- [use-memo-one](https://npm.im/use-memo-one)
 
 and own unopinionated at their best implementations:
 

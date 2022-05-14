@@ -1,7 +1,10 @@
-export const emitChange = (el: HTMLInputElement) => {
+export const emitChange = (
+  el: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+) => {
   const event = new Event('change', { bubbles: true });
 
   Object.defineProperty(event, 'simulated', {
+    enumerable: true,
     value: true
   });
 
@@ -10,9 +13,12 @@ export const emitChange = (el: HTMLInputElement) => {
   return true;
 };
 
-const emitterValue = /*#__NOINLINE__*/Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+export const emitValue = (
+  el: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
+  value: string
+) => {
+  const emitterValue = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(el), 'value');
 
-export const emitValue = (el: HTMLInputElement, value: string) => {
   if (emitterValue && emitterValue.set) {
     emitterValue.set.call(el, value);
   }
@@ -20,9 +26,9 @@ export const emitValue = (el: HTMLInputElement, value: string) => {
   return emitChange(el);
 };
 
-const emitterChecked = /*#__NOINLINE__*/Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'checked');
-
 export const emitChecked = (el: HTMLInputElement, value: boolean) => {
+  const emitterChecked = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(el), 'checked');
+
   if (emitterChecked && emitterChecked.set) {
     emitterChecked.set.call(el, value);
   }

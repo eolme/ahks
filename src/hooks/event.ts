@@ -6,11 +6,11 @@ import { useIsomorphicLayoutEffect } from './isomorphic.js';
 import { passiveOptions } from '../global/event.js';
 
 export const useChangeCommit = (
-  ref: RefObject<HTMLInputElement | null>
+  ref: RefObject<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null>
 ) => useHandler(() => ref.current !== null && emitChange(ref.current));
 
 export const useValueCommit = (
-  ref: RefObject<HTMLInputElement | null>
+  ref: RefObject<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null>
 ) => useHandler((value: string) => ref.current !== null && emitValue(ref.current, value));
 
 export const useCheckCommit = (

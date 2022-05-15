@@ -1,18 +1,28 @@
 import { noop } from '../fn/noop.js';
 
-export const passiveOptions = /*#__NOINLINE__*/(() => {
+export const passiveOptions = /*#__NOINLINE__*/() => {
+  let detected = false;
   let passive = false;
 
-  const options = Object.defineProperty({}, 'passive', {
-    get() {
-      passive = true;
+  if (!detected) {
+    try {
+      const options = Object.defineProperty({}, 'passive', {
+        enumerable: true,
+        get() {
+          passive = true;
 
-      return passive;
+          return passive;
+        }
+      });
+
+      addEventListener('passive', noop, options);
+      removeEventListener('passive', noop, options);
+    } catch {
+      passive = false;
+    } finally {
+      detected = true;
     }
-  });
+  }
 
-  addEventListener('passive', noop, options);
-  removeEventListener('passive', noop, options);
-
-  return passive ? { passive } : false;
-})() as AddEventListenerOptions;
+  return (passive ? { passive } : false) as AddEventListenerOptions;
+};

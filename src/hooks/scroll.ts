@@ -17,11 +17,13 @@ export const useScrollHandler = (handler: (scroll: number) => any) => {
       }
     };
 
-    addEventListener('scroll', scrollHandler, passiveOptions);
+    const options = passiveOptions();
+
+    addEventListener('scroll', scrollHandler, options);
 
     return () => {
       mounted = false;
-      removeEventListener('scroll', scrollHandler, passiveOptions);
+      removeEventListener('scroll', scrollHandler, options);
     };
   });
 };

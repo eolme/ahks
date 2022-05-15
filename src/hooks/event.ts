@@ -41,10 +41,12 @@ export const usePassiveEvent = <K extends string>(
       return;
     }
 
-    elem.addEventListener(event, listener as EventListener, passiveOptions);
+    const options = passiveOptions();
+
+    elem.addEventListener(event, listener as EventListener, options);
 
     return () => {
-      elem.removeEventListener(event, listener as EventListener, passiveOptions);
+      elem.removeEventListener(event, listener as EventListener, options);
     };
   }, [ref.current]);
 };

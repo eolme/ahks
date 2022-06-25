@@ -75,7 +75,3 @@ export {
   useUpdate,
   useUpdateState
 } from './hooks/state.js';
-
-export {
-  useSyncExternalStore
-} from './hooks/store.js';

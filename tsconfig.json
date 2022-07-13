@@ -20,7 +20,9 @@
     "outDir": "lib"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "utils.d.ts",
+    "utils.js"
   ],
   "exclude": [
     "lib",

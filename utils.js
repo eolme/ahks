@@ -1,3 +1,2 @@
-// @ts-nocheck
-// eslint-disable-next-line
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 module.exports = require('./lib/utils/index');

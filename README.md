@@ -27,8 +27,6 @@ and own unopinionated at their best implementations:
 
 - useRenderEffect — almost same to useEffect, but not deferred (like [useAction](https://github.com/awmleer/use-action)).
 
-- useInsertionEffect — original [useInsertionEffect](https://reactjs.org/docs/hooks-reference.html#useinsertioneffect) with [useIsomorphicLayoutEffect](https://npm.im/use-isomorphic-layout-effect) fallback.
-
 #### Handlers:
 
 - useHandler — more effective alternative to useCallback with constant dependencies list.

@@ -28,10 +28,6 @@ export {
 } from './hooks/handler.js';
 
 export {
-  useInsertionEffect
-} from './hooks/insertion.js';
-
-export {
   useIsomorphicLayoutEffect
 } from './hooks/isomorphic.js';
 

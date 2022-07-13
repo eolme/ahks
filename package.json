@@ -1,7 +1,7 @@
 {
   "name": "ahks",
   "amdName": "ahks",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "./lib/index.js",
   "module": "./lib/index.module.js",
   "modern": "./lib/index.modern.js",

@@ -20,12 +20,12 @@
     "outDir": "lib"
   },
   "include": [
-    "src/**/*",
-    "utils.d.ts",
-    "utils.js"
+    "src/**/*"
   ],
   "exclude": [
-    "lib",
-    "node_modules"
+    "./utils.d.ts",
+    "./utils.js",
+    "lib/",
+    "node_modules/"
   ]
 }

@@ -1,29 +1,19 @@
 {
   "name": "ahks",
-  "amdName": "ahks",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "./lib/index.js",
-  "module": "./lib/index.module.js",
-  "modern": "./lib/index.modern.js",
-  "jsnext:main": "./lib/index.modern.js",
-  "esmodule": "./lib/index.modern.js",
-  "umd:main": "./lib/index.umd.js",
-  "unpkg": "./lib/index.umd.js",
+  "module": "./lib/index.mjs",
+  "modern": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
-  "source": "./src/index.ts",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "browser": "./lib/index.module.js",
-      "umd": "./lib/index.umd.js",
-      "import": "./lib/index.modern.js",
+      "import": "./lib/index.mjs",
       "require": "./lib/index.js"
     },
     "./utils": {
       "types": "./lib/utils/index.d.ts",
-      "browser": "./lib/utils/index.module.js",
-      "umd": "./lib/index.umd.js",
-      "import": "./lib/utils/index.modern.js",
+      "import": "./lib/utils/index.mjs",
       "require": "./lib/utils/index.js"
     }
   },
@@ -32,7 +22,10 @@
     "LICENSE",
     "package.json",
     "README.md",
-    "utils.js"
+    "utils.d.ts",
+    "utils.d.mts",
+    "utils.js",
+    "utils.mjs"
   ],
   "sideEffects": false,
   "author": {
@@ -40,43 +33,43 @@
     "email": "im@petrov.engineer",
     "url": "https://petrov.engineer"
   },
-  "description": "Utility functions and constants shared across @mntm packages",
+  "description": "Utility hooks, functions and constants",
   "license": "MIT",
   "keywords": [
-    "mntm",
+    "ahks",
     "shared",
     "utility",
     "utils",
     "hooks"
   ],
-  "homepage": "https://github.com/maxi-team/shared",
-  "bugs": "https://github.com/maxi-team/shared/issues",
+  "homepage": "https://github.com/eolme/ahks",
+  "bugs": "https://github.com/eolme/ahks/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxi-team/shared.git"
+    "url": "https://github.com/eolme/ahks.git"
   },
-  "packageManager": "yarn@3.2.1",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "prebuild": "shx rm -rf lib",
-    "build": "npm-run-all --parallel build:*",
-    "build:main": "microbundle build --raw --strict",
-    "build:utils": "microbundle build --raw --strict --entry src/utils/index.ts --output lib/utils/index.js --name ahksUtils",
+    "build": "npm-run-all --parallel 'build:*'",
+    "build:main": "VARIANT=main vite build",
+    "build:utils": "VARIANT=utils vite build",
     "lint": "eslint --fix src/**/*.*"
   },
   "devDependencies": {
-    "@mntm/eslint-config": "^1.1.2",
-    "@types/node": "^17.0.31",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
+    "@mntm/eslint-config": "^1.3.1",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "@types/use-sync-external-store": "^0.0.3",
-    "eslint": "^8.15.0",
-    "microbundle": "^0.15.0",
+    "eslint": "^8.27.0",
     "npm-run-all": "^4.1.5",
     "shx": "^0.3.4",
-    "typescript": "^4.6.4"
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "vite-plugin-dts": "^1.7.1"
   },
   "peerDependencies": {
     "react": ">=17"
@@ -89,12 +82,12 @@
   "dependencies": {
     "use-callback-ref": "^1.3.0",
     "use-composed-ref": "^1.3.0",
-    "use-debounce": "^8.0.1",
+    "use-debounce": "^8.0.4",
     "use-deep-compare-effect": "^1.8.1",
     "use-is-mounted-ref": "^1.5.0",
     "use-isomorphic-layout-effect": "^1.1.2",
     "use-latest": "^1.2.1",
-    "use-memo-one": "^1.1.2",
-    "use-sync-external-store": "^1.1.0"
+    "use-memo-one": "^1.1.3",
+    "use-sync-external-store": "^1.2.0"
   }
 }

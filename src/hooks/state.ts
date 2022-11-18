@@ -4,7 +4,7 @@ import { useReducer, useRef } from 'react';
 import { constRef } from '../utils/index.js';
 import { useHandler } from './handler.js';
 
-const updateReducer = /*#__NOINLINE__*/() => ({});
+const updateReducer = () => ({});
 
 export const useUpdateState = () => {
   return useReducer(updateReducer, constRef);

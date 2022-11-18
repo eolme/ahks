@@ -1,6 +1,6 @@
 import { noop } from '../fn/noop.js';
 
-export const passiveOptions = /*#__NOINLINE__*/() => {
+export const passiveOptions = () => {
   let detected = false;
   let passive = false;
 

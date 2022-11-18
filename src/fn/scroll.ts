@@ -1,4 +1,4 @@
-export const scrollTop = /*#__NOINLINE__*/() => {
+export const scrollTop = () => {
   return Math.max(
     window.pageYOffset,
     document.documentElement.scrollTop,

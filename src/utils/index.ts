@@ -8,8 +8,8 @@ export {
   transformRef
 } from 'use-callback-ref';
 
-export const constRef = /*#__NOINLINE__*/{} as const;
+export const constRef = {} as const;
 
-export const constExoticDeps: any[] = /*#__NOINLINE__*/[];
+export const constExoticDeps: any[] = [];
 
-export const constDeps: DependencyList = /*#__NOINLINE__*/constExoticDeps;
+export const constDeps: DependencyList = constExoticDeps;

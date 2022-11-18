@@ -1,6 +1,6 @@
 {
   "name": "ahks",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
   "modern": "./lib/index.mjs",
@@ -15,7 +15,13 @@
       "types": "./lib/utils/index.d.ts",
       "import": "./lib/utils/index.mjs",
       "require": "./lib/utils/index.js"
-    }
+    },
+    "./lib/utils": {
+      "types": "./lib/utils/index.d.ts",
+      "import": "./lib/utils/index.mjs",
+      "require": "./lib/utils/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "lib",
